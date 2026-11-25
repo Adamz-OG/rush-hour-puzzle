@@ -1,0 +1,9 @@
++------+
+|BCDEE.|
+|BCDFF.|
+|AAG....
+|HHG...|
+|IIIJKL|
+|MM.JKL|
++------+
+90

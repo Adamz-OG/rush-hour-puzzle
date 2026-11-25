@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rush-hour-puzzle"
+version = "1.0.0"
+description = "Rush Hour sliding puzzle for the terminal, with a breadth-first solver, in pure Python."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Adam Zouaoui" }]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.5", "mypy>=1.10"]
+
+[project.scripts]
+rushhour = "rushhour.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+rushhour = ["levels/*.txt"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "D"]
+ignore = ["D203", "D213"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]
+"benchmarks/*" = ["D"]
+
+[tool.mypy]
+strict = true
+mypy_path = "src"

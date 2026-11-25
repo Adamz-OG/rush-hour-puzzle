@@ -1,0 +1,9 @@
++------+
+|BBCCDE|
+|FFG.DE|
+|..GAAE.
+|..GH..|
+|I..HJJ|
+|IKKLLL|
++------+
+60
